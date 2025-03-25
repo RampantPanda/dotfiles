@@ -42,38 +42,57 @@ nord15 #b48ead
 
 * {
     color: #eceff4;
-    border: 0;
     border-radius: 0;
+    border-top: 2;
+    border-bottom: 2;
+    border-left: 2;
+    border-right: 2;
     padding: 0 0;
     font-family:Symbols Nerd Font Mono;
     font-size: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
     padding-bottom:2px;
+    padding-top:2px;
    }
 
 window#waybar {
-    background:rgba (0, 0, 0, 0.65);
+    background:rgba (0, 0, 0, 0.15);
     border-radius: 20px 20px 20px 20px;
 }
-
+#workspaces{
+	border: 2px;
+}
 #workspaces button {
-    padding: 2px 0px;
-    border-bottom: 2px;
+    padding: 0px 0px;
+    font-size: 25px;
+    border: 1px;
+    border-radius: 5px;
     color: #eceff4;
     border-color: #d8dee9;
     border-style: solid;
-    margin-top:2px;
+    margin-top:0px;
 }
 
 #workspaces button.active {
     border-color: #81a1c1;
+	color: #81a1c1;
+	border: 3px;
+	border-style: solid;
 }
 
-#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
-    padding: 0 3px;
-    border-bottom: 2px;
+#clock, #battery, #cpu, #memory, #temperature, #pulseaudio, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
+    padding: 0 7px;
     border-style: solid;
+}
+
+#custom-keyboard-layout, #backlight, #network,#idle_inhibitor{
+	padding: 0 15px;
+	border-style: solid;
+}
+
+#tray{
+	border: 0px;	
 }
 
 /* -----------------------------------------------------------------------------

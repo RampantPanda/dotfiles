@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 40,
+    "height": 30,
     "width":1900,
     "margin": "0 0 0 0",
     "spacing":0,
@@ -9,9 +9,9 @@
     // Choose the order of the modules
     // Add according to your wishes: "custom/weather"
 
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["custom/network_traffic"],
-    "modules-right": ["custom/updates", "backlight", "custom/keyboard-layout", "temperature", "cpu", "memory", "battery", "pulseaudio", "network", "tray", "idle_inhibitor", "clock","custom/power"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["temperature", "cpu", "memory", "battery", "pulseaudio", "network", "custom/keyboard-layout", "tray", "idle_inhibitor"],
 
  // Modules configuration
 
@@ -21,22 +21,26 @@
     "all-outputs": true,
     "sort-by-number": true,
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
-    },
+//      "1": "1",
+//      "2": "2",
+//      "3": "3",
+//      "4": "4",
+//      "5": "5",
+//      "6": "6",
+//      "7": "7",
+//      "8": "8",
+//      "9": "9",
+//      "10": "10",
+      "active": "󰮯",
+      "default": ""
+    },    
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
+	"persistent-workspaces": {
+	    "*": [ 1,2,3,4,5,6 ]
+		}
     },
+    
     "hyprland/window": {
         "format": "{}",
 	"icon":true,
@@ -57,8 +61,9 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a %d %b  %I:%M %p}",	//12 hour format
+        //"format": " {:%a %d %b  %I:%M %p}",	//12 hour format
         //"format": " {:%a %d %b  %H:%M}",	//24 hour format
+        "format": " {:%H:%M}",	//24 hour format
         "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
         //"max-length": 200
         "interval": 1,
@@ -110,7 +115,7 @@
         "format-disconnected": "⚠Disabled",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-wifi": "  {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         //"min-length": 2,
         //"max-length": 2,
@@ -133,7 +138,7 @@
       	"tooltip": false,
    },
    "custom/keyboard-layout": {
-      	"format": " Cheat", // Icon: keyboard
+      	"format": " ", // Icon: keyboard
         "on-click": "~/.config/waybar/scripts/keyhint.sh",
      },
     "custom/launcher": {
