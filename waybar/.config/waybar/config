@@ -31,7 +31,7 @@
 //      "8": "8",
 //      "9": "9",
 //      "10": "10",
-      "active": "󰮯",
+      "active": "<span color=\"#ff0000\">󰮯</span>",
       "default": ""
     },    
     "on-scroll-up": "hyprctl dispatch workspace e+1",

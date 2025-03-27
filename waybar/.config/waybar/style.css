@@ -61,12 +61,12 @@ window#waybar {
     border-radius: 20px 20px 20px 20px;
 }
 #workspaces{
-	border: 2px;
+	border: 0px;
 }
 #workspaces button {
     padding: 0px 0px;
     font-size: 25px;
-    border: 1px;
+    border: 0px;
     border-radius: 5px;
     color: #eceff4;
     border-color: #d8dee9;
@@ -77,7 +77,7 @@ window#waybar {
 #workspaces button.active {
     border-color: #81a1c1;
 	color: #81a1c1;
-	border: 3px;
+	border: 0px;
 	border-style: solid;
 }
 
