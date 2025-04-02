@@ -11,7 +11,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["temperature", "cpu", "memory", "battery", "pulseaudio", "network", "custom/keyboard-layout", "tray", "idle_inhibitor"],
+    "modules-right": ["temperature", "cpu", "memory", "disk", "battery", "pulseaudio", "network", "tray", "idle_inhibitor"],
 
  // Modules configuration
 
@@ -31,8 +31,9 @@
 //      "8": "8",
 //      "9": "9",
 //      "10": "10",
-      "active": "<span color=\"#ff0000\">󰮯</span>",
-      "default": ""
+      "active": "<span color=\"#81a1c1\">󰮯</span>",
+      "default": "<span color=\"#81a1c1\"></span>",
+      "empty": "<span color=\"#81a1c1\"></span>",
     },    
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -74,7 +75,7 @@
         "on-click": "foot -e htop"
     },
     "memory": {
-        "format": "🖴 {: >3}%",
+        "format": "󰍛 {: >3}%",
         "on-click": "foot -e htop"
     },
     "temperature": {
@@ -112,7 +113,7 @@
         "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "⚠Disabled",
+        "format-disconnected": "󰤮",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "family": "ipv4",
         "tooltip-format-wifi": "  {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
@@ -179,4 +180,10 @@
         "interval": 900,
 	    "on-click": "yad --html --uri='https://wttr.in/Essen' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
         },
+   "disk": {
+       "interval": 30,
+       "format": "  {percentage_used}%",
+       "path": "/"
+   }
+   
     }

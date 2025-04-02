@@ -41,35 +41,32 @@ nord15 #b48ead
 /* Reset all styles */
 
 * {
-    color: #eceff4;
+    color: #81a1c1;
+    border-style:solid;
     border-radius: 0;
-    border-top: 2;
-    border-bottom: 2;
-    border-left: 2;
-    border-right: 2;
+    border:2px;
     padding: 0 0;
     font-family:Symbols Nerd Font Mono;
     font-size: 15px;
-    margin-right: 2px;
-    margin-left: 2px;
-    padding-bottom:2px;
-    padding-top:2px;
+    margin: 2px;
+    padding-bottom:0px;
+    padding-top:0px;
    }
 
 window#waybar {
-    background:rgba (0, 0, 0, 0.15);
+    background:rgba (0, 0, 0, 0);
     border-radius: 20px 20px 20px 20px;
 }
 #workspaces{
-	border: 0px;
+	border-color: #81a1c1;
 }
 #workspaces button {
     padding: 0px 0px;
     font-size: 25px;
     border: 0px;
-    border-radius: 5px;
-    color: #eceff4;
-    border-color: #d8dee9;
+    border-radius: 0px;
+    color: #81a1c1;
+    border-color: #81a1c1;
     border-style: solid;
     margin-top:0px;
 }
@@ -77,12 +74,12 @@ window#waybar {
 #workspaces button.active {
     border-color: #81a1c1;
 	color: #81a1c1;
-	border: 0px;
-	border-style: solid;
+	border-style:hidden;
 }
 
 #clock, #battery, #cpu, #memory, #temperature, #pulseaudio, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
     padding: 0 7px;
+    margin-top:2px;
     border-style: solid;
 }
 
@@ -92,16 +89,23 @@ window#waybar {
 }
 
 #tray{
-	border: 0px;	
+	border: 2px;	
 }
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#workspaces {
+	border-style: solid;
+}
 
+#disk {
+	border-style: solid;
+	padding: 3px;
+}
 
 #clock {
- color:#a3be8c;
+ color:#81a1c1;
 }
 
 #backlight {
@@ -109,7 +113,7 @@ window#waybar {
 }
 
 #battery {
-    color: #d8dee9;
+    color: #81a1c1;
 }
 
 #battery.charging {
@@ -124,56 +128,58 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    background: #bf616a;
-    color: #eceff4;
+/*    background: #bf616a;
+ *   color: #eceff4;*/
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    border-color: #f33944;
 }
 
 #cpu {
-    color:#a3be8c ;
+    color:#81a1c1 ;
 }
 
 #memory {
-    color: #d3869b;
+    color: #81a1c1;
 }
 
 #network.disabled {
-    color:#bf616a;
+    color:#f5a63d;
 }
 
 #network{
-    color:#a3be8c;
+    color:#81a1c1;
 }
 
 #network.disconnected {
-    color: #bf616a;
+    color: #f33944;
 }
 
 #pulseaudio {
-    color: #b48ead;
+    color: #81a1c1;
 }
 
 #pulseaudio.muted {
-    color: #e20548;
+    color: #f5a63d;
 }
 
 #temperature {
-    color: #8fbcbb;
+    color: #81a1c1;
 }
 
 #temperature.critical {
-    color: #bf616a;
+    color: #f33944;
 }
 
 #idle_inhibitor {
-   color: #ebcb8b;
+   color: #81a1c1;
 }
 
 #tray {
+		border-style: solid;
 }
 
 #custom-launcher{
@@ -195,7 +201,7 @@ window#waybar {
     margin-top:1px;
 }
 #custom-keyboard-layout{
-   color:#d08770;
+   color:#81a1c1;
 }
 #custom-network_traffic{
    color:#d08770;
