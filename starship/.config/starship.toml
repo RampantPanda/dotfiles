@@ -3,20 +3,20 @@
 [username]
 format = " [╭─$user]($style)@"
 show_always = true
-style_root = "bold red"
-style_user = "bold red"
+style_root = "bold #ff00ff"
+style_user = "bold #00ffff"
 
 # Second param
 [hostname]
 disabled = false
 format = "[$hostname]($style) in "
 ssh_only = false
-style = "bold dimmed red"
+style = "bold #00ff00"
 trim_at = "-"
 
 # Third param
 [directory]
-style = "purple"
+style = "#ff00ff"
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
@@ -31,13 +31,14 @@ ahead = "⇡${count}"
 behind = "⇣${count}"
 deleted = "x"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "white"
+style = "#00ffff"
 
 # Last param in the first line/row
 [cmd_duration]
 disabled = false
 format = "took [$duration]($style)"
 min_time = 1
+style = "#ffff00"
 
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
@@ -49,7 +50,7 @@ full_symbol = ""
 
 [[battery.display]] # "bold red" style when capacity is between 0% and 15%
 disabled = false
-style = "bold red"
+style = "bold #ff0040"
 threshold = 15
 
 [[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
@@ -71,8 +72,8 @@ time_format = "%T"
 
 # Prompt: param 2
 [character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─λ](bold red)"
+error_symbol = " [×](bold #ff0040)"
+success_symbol = " [╰─λ](bold #00ffff)"
 
 # SYMBOLS
 [status]
@@ -80,7 +81,8 @@ disabled = false
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
 pipestatus = true
-symbol = "🔴"
+symbol = "■"
+style = "bold #ff0040"
 
 [aws]
 symbol = " "

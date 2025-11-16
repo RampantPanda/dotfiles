@@ -1,208 +1,327 @@
 /* =============================================================================
  *
- * Waybar configuration
+ * Waybar configuration - CYBERPUNK 1980s RETROFUTURISTIC THEME
  *
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
  *
  * =========================================================================== */
 
 /* -----------------------------------------------------------------------------
- * Keyframes
+ * Cyberpunk Color Palette
+ * -------------------------------------------------------------------------- */
+/*
+ * Neon Cyan: #00FFFF
+ * Neon Magenta: #FF00FF
+ * Neon Green: #00FF00
+ * Dark Background: #000000
+ * Dark Gray: #0a0a0a
+ * Accent Red: #FF0040
+ * Accent Yellow: #FFFF00
+ */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes - Cyberpunk animations
  * -------------------------------------------------------------------------- */
 
+@keyframes cyberpunk-glow {
+    0% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    }
+}
 
-/*
-Polar Night
-nord0  #2e3440
-nord1  #3b4252
-nord2  #434c5e
-nord3  #4c566a
-Snow Storm
-nord4  #d8dee9
-nord5  #e5e9f0
-nord6  #eceff4
-Frost
-nord7  #8fbcbb
-nord8  #88c0d0
-nord9  #81a1c1
-nord10 #5e81ac
-Aurora
-nord11 #bf616a
-nord12 #d08770
-nord13 #ebcb8b
-nord14 #a3be8c
-nord15 #b48ead
-*/
+@keyframes cyberpunk-pulse {
+    0% {
+        border-color: #00ffff;
+        box-shadow: 0 0 5px #00ffff;
+    }
+    50% {
+        border-color: #ff00ff;
+        box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+    100% {
+        border-color: #00ffff;
+        box-shadow: 0 0 5px #00ffff;
+    }
+}
+
+@keyframes blink-critical {
+    to {
+        color: #ff0040;
+        text-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040;
+    }
+}
 
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
 
-/* Reset all styles */
-
 * {
-    color: #81a1c1;
-    border-style:solid;
+    color: #00ffff;
+    border-style: solid;
     border-radius: 0;
-    border:2px;
+    border: 2px;
     padding: 0 0;
-    font-family:Symbols Nerd Font Mono;
-    font-size: 15px;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", "Symbols Nerd Font Mono", "IBM Plex Mono", "Courier New", monospace;
+    font-size: 14px;
     margin: 2px;
-    padding-bottom:0px;
-    padding-top:0px;
-   }
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
 
 window#waybar {
-    background:rgba (0, 0, 0, 0);
-    border-radius: 20px 20px 20px 20px;
-}
-#workspaces{
-	border-color: #81a1c1;
-}
-#workspaces button {
-    padding: 0px 0px;
-    font-size: 25px;
-    border: 0px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 0px;
-    color: #81a1c1;
-    border-color: #81a1c1;
-    border-style: solid;
-    margin-top:0px;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+}
+
+#workspaces {
+    border-color: #00ffff;
+    border-width: 2px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    border: 2px solid #00ffff;
+    border-radius: 0px;
+    color: #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+    margin-top: 0px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px #00ffff;
 }
 
 #workspaces button.active {
-    border-color: #81a1c1;
-	color: #81a1c1;
-	border-style:hidden;
+    border-color: #ff00ff;
+    color: #ff00ff;
+    background: rgba(255, 0, 255, 0.15);
+    box-shadow: 0 0 15px #ff00ff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #pulseaudio, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
-    padding: 0 7px;
-    margin-top:2px;
+#workspaces button.empty {
+    color: #00ff00;
+    border-color: #00ff00;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+#clock, #battery, #cpu, #memory, #temperature, #pulseaudio, #window, #custom-launcher, #custom-power, #custom-updates, #custom-network_traffic, #custom-weather {
+    padding: 0 10px;
+    margin-top: 2px;
     border-style: solid;
+    border-color: #00ffff;
+    border-width: 2px;
+    background: rgba(0, 255, 255, 0.05);
+    color: #00ffff;
 }
 
-#custom-keyboard-layout, #backlight, #network,#idle_inhibitor{
-	padding: 0 15px;
-	border-style: solid;
-}
-
-#tray{
-	border: 2px;	
-}
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-#workspaces {
-	border-style: solid;
-}
-
-#disk {
-	border-style: solid;
-	padding: 3px;
-}
-
-#clock {
- color:#81a1c1;
-}
-
-#backlight {
-    color: #ebcb8b;
-}
-
-#battery {
-    color: #81a1c1;
-}
-
-#battery.charging {
-    color: #81a1c1;
-}
-
-@keyframes blink {
-    to {
-        color: #4c566a;
-        background-color: #eceff4;
-    }
-}
-
-#battery.critical:not(.charging) {
-/*    background: #bf616a;
- *   color: #eceff4;*/
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    border-color: #f33944;
-}
-
-#cpu {
-    color:#81a1c1 ;
-}
-
-#memory {
-    color: #81a1c1;
-}
-
-#network.disabled {
-    color:#f5a63d;
-}
-
-#network{
-    color:#81a1c1;
-}
-
-#network.disconnected {
-    color: #f33944;
-}
-
-#pulseaudio {
-    color: #81a1c1;
-}
-
-#pulseaudio.muted {
-    color: #f5a63d;
-}
-
-#temperature {
-    color: #81a1c1;
-}
-
-#temperature.critical {
-    color: #f33944;
-}
-
-#idle_inhibitor {
-   color: #81a1c1;
+#custom-keyboard-layout, #backlight, #network, #idle_inhibitor {
+    padding: 0 15px;
+    border-style: solid;
+    border-color: #00ffff;
+    border-width: 2px;
+    background: rgba(0, 255, 255, 0.05);
 }
 
 #tray {
-		border-style: solid;
+    border: 2px solid #00ff00;
+    background: rgba(0, 255, 0, 0.05);
+    box-shadow: 0 0 5px #00ff00;
 }
 
-#custom-launcher{
-        font-size: 20px;
-        background-image: url('/home/pekka/.config/waybar/launcher.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-style: hidden;
+/* -----------------------------------------------------------------------------
+ * Module styles - Cyberpunk theme
+ * -------------------------------------------------------------------------- */
+
+#disk {
+    border-style: solid;
+    border-color: #0080ff;
+    border-width: 2px;
+    padding: 3px;
+    background: rgba(0, 128, 255, 0.1);
+    color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
 }
 
-#custom-power{
+#clock {
+    color: #ff00ff;
+    border-color: #ff00ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff00ff;
+    box-shadow: 0 0 5px #ff00ff;
+}
+
+#backlight {
+    color: #ffff00;
+    border-color: #ffff00;
+    box-shadow: 0 0 5px #ffff00;
+}
+
+#battery {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#battery.warning:not(.charging) {
+    color: #ff8000;
+    border-color: #ff8000;
+    box-shadow: 0 0 5px #ff8000;
+    background: rgba(255, 128, 0, 0.1);
+}
+
+#battery.charging {
+    color: #00ff00;
+    border-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    animation: cyberpunk-glow 2s ease-in-out infinite;
+}
+
+#battery.critical:not(.charging) {
+    animation-name: blink-critical;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: #ff0040;
+    border-color: #ff0040;
+    box-shadow: 0 0 10px #ff0040;
+    background: rgba(255, 0, 64, 0.6);
+}
+
+#cpu {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#memory {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#network.disabled {
+    color: #ff8000;
+    border-color: #ff8000;
+    box-shadow: 0 0 5px #ff8000;
+    background: rgba(255, 128, 0, 0.1);
+}
+
+#network {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#network.disconnected {
+    color: #ff0040;
+    border-color: #ff0040;
+    box-shadow: 0 0 10px #ff0040;
+    background: rgba(255, 0, 64, 0.6);
+}
+
+#pulseaudio {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#pulseaudio.muted {
+    color: #ff8000;
+    border-color: #ff8000;
+    box-shadow: 0 0 5px #ff8000;
+    background: rgba(255, 128, 0, 0.3);
+}
+
+#temperature {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
+    background: rgba(0, 128, 255, 0.1);
+}
+
+#temperature.critical {
+    color: #ff0040;
+    border-color: #ff0040;
+    box-shadow: 0 0 10px #ff0040;
+    background: rgba(255, 0, 64, 0.6);
+    animation: blink-critical 1s ease-in-out infinite;
+}
+
+#idle_inhibitor {
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+}
+
+#custom-launcher {
+    font-size: 20px;
+    background-image: url('/home/pekka/.config/waybar/launcher.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-style: hidden;
-    margin-top:2px;
+    /* Note: Waybar CSS doesn't support filter property */
 }
 
-#window{
+#custom-power {
+    border-style: solid;
+    border-color: #ff0040;
+    margin-top: 2px;
+    color: #ff0040;
+    background: rgba(255, 0, 64, 0.6);
+}
+
+#custom-power:hover {
+    box-shadow: 0 0 10px #ff0040;
+}
+
+#window {
     border-style: hidden;
-    margin-top:1px;
+    margin-top: 1px;
+    color: #00ffff;
+    font-weight: bold;
 }
-#custom-keyboard-layout{
-   color:#81a1c1;
+
+#custom-keyboard-layout {
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 5px #00ffff;
 }
-#custom-network_traffic{
-   color:#d08770;
+
+#custom-network_traffic {
+    color: #ff00ff;
+    border-color: #ff00ff;
+    box-shadow: 0 0 5px #ff00ff;
+}
+
+#custom-updates {
+    color: #ffff00;
+    border-color: #ffff00;
+    box-shadow: 0 0 5px #ffff00;
+}
+
+#custom-weather {
+    color: #0080ff;
+    border-color: #0080ff;
+    box-shadow: 0 0 5px #0080ff;
 }

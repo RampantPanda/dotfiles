@@ -1,33 +1,48 @@
+/* nwgbar - Cyberpunk 1980s Retrofuturistic Theme */
+
 #bar {
-    margin: 0px; /* affects top/bottom & left/right alignment */
+    margin: 0px;
     font-size: 16px;
-    font-family: Product Sans;
+    font-family: "JetBrains Mono", monospace;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 3px solid #00ffff;
+    border-radius: 0px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
 
 button, image {
     background: none;
     border-style: none;
     box-shadow: none;
-    color:#eceff4;
+    color: #00ffff;
 }
 
 button {
-    padding-top: 10px;
-    margin: 5px
+    padding: 15px;
+    margin: 5px;
+    border: 2px solid transparent;
+    border-radius: 0px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: rgba (255,0,0,0.5);
+    background-color: rgba(0, 255, 255, 0.15);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    color: #00ffff;
 }
 
 button:focus {
-    background-color: rgba (255,0,0,0.5);
+    background-color: rgba(255, 0, 255, 0.2);
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    color: #ff00ff;
 }
 
 grid {
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 5px;
-    padding: 5px;
-    box-shadow: 0 0 50px rgba(255,0,0,0.7);
-    /* e.g. for common background to all buttons */
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 0px;
+    padding: 10px;
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
 }

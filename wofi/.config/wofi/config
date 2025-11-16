@@ -1,10 +1,50 @@
-location=middle
-show=drun
-width=650
-height=550
-always_parse_args=true
-show_all=true
-print_command=true
-layer=overlay
+# Wofi launcher - Cyberpunk 1980s Retrofuturistic Theme
+
+# Appearance
+width=600
+height=400
+location=center
+anchor=center
+orientation=vertical
+columns=2
+lines=8
+allow_markup=true
+no_actions=true
+halign=fill
+reverse=false
+cycle=true
+show_all=false
 insensitive=true
-prompt=
+sort_order=default
+allow_images=true
+image_size=40
+gtk_dark=true
+
+# Behavior
+hide_scroll=true
+term=footclient
+exec_search=true
+parse_search=true
+layer=overlay
+hide_on_search=false
+
+# Colors - Cyberpunk theme
+background-color=#000000
+text-color=#00ffff
+border-color=#00ffff
+border-width=3
+prompt-color=#ff00ff
+selection-color=#ff00ff
+selection-background-color=rgba(255, 0, 255, 0.2)
+selection-text-color=#00ffff
+
+# Font
+font=JetBrains Mono 14
+
+# Spacing
+margin=20
+padding=15
+inner-margin=10
+
+# Other
+filter_rate=100

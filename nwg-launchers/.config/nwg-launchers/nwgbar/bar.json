@@ -1,13 +1,28 @@
 [
   {
     "name": "_Lock screen",
-    "exec": "swaylock -f -i '/usr/share/wallpapers/garuda-wallpapers/Garuda-TilliDie-cube-105.png'",
+    "exec": "hyprlock",
     "icon": "/usr/share/nwg-launchers/nwgbar/images/lock.svg"
   },
   {
   	"name": "Suspen_d",
     "exec": "systemctl suspend",
   	"icon": "/usr/share/nwg-launchers/nwgbar/images/suspend.svg"
+  },
+  {
+    "name": "_Hibernate",
+    "exec": "systemctl hibernate",
+    "icon": "/usr/share/nwg-launchers/nwgbar/images/suspend.svg"
+  },
+  {
+    "name": "_System Monitor",
+    "exec": "foot -e htop",
+    "icon": "/usr/share/nwg-launchers/nwgbar/images/logout.svg"
+  },
+  {
+    "name": "_Screenshot",
+    "exec": "sh -c 'grim -g \"$(slurp)\" - | swappy -f -'",
+    "icon": "/usr/share/nwg-launchers/nwgbar/images/logout.svg"
   },
   {
     "name": "Logou_t",
