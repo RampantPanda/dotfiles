@@ -91,17 +91,24 @@ window#waybar {
     font-size: 20px;
     font-weight: bold;
     font-family: "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
-    border: 2px solid #00ffff;
+    border: 2px solid #00ff00;
     border-radius: 0px;
-    color: #00ffff;
-    background: rgba(0, 255, 255, 0.1);
+    color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
     margin-top: 0px;
     transition: all 0.3s ease;
 }
 
+/* Inactive workspace (occupied but not active) - Green */
+#workspaces button:not(.active):not(.empty) {
+    border-color: #00ff00;
+    color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+}
+
 #workspaces button:hover {
-    background: rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 10px #00ffff;
+    background: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 10px #00ff00;
 }
 
 #workspaces button.active {
@@ -112,12 +119,24 @@ window#waybar {
 }
 
 #workspaces button.empty {
-    color: #00ff00;
-    border-color: #00ff00;
-    background: rgba(0, 255, 0, 0.05);
+    color: #00ffff;
+    border-color: #00ffff;
+    background: rgba(0, 255, 255, 0.05);
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #pulseaudio, #window, #custom-launcher, #custom-power, #custom-updates, #custom-network_traffic, #custom-weather {
+#clock {
+    padding: 0 10px;
+    margin-top: 2px;
+    border-style: solid;
+    border-color: #00ffff;
+    border-width: 2px;
+    background: rgba(0, 255, 255, 0.05);
+    color: #00ffff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#battery, #cpu, #memory, #temperature, #pulseaudio, #window, #custom-launcher, #custom-power, #custom-updates, #custom-network_traffic, #custom-weather {
     padding: 0 10px;
     margin-top: 2px;
     border-style: solid;
