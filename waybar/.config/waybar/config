@@ -24,13 +24,13 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "󰎞",
-            "2": "󰈹",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "󰻞",
-            "7": "!",
+            "1": "󰎞",             # Writing
+            "2": "󰈹",             # Firefox
+            "3": "",             # Terminal
+            "4": "",             # Video
+            "5": "",             # Audio
+            "6": "󰻞",             # Chat
+            "7": "!",            # Coding
         },
         "persistent-workspaces": {
             "*": [ 1, 2, 3, 4, 5, 6, 7 ]
