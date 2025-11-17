@@ -118,6 +118,14 @@ window#waybar {
     box-shadow: 0 0 15px #ff00ff;
 }
 
+/* Active workspace should always be purple, even if empty */
+#workspaces button.active.empty {
+    border-color: #ff00ff;
+    color: #ff00ff;
+    background: rgba(255, 0, 255, 0.15);
+    box-shadow: 0 0 15px #ff00ff;
+}
+
 #workspaces button.empty {
     color: #00ffff;
     border-color: #00ffff;
