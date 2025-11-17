@@ -2,8 +2,9 @@
 cd ~
 # user preferred settings
 
-#cursor size
+#cursor size and theme
 export XCURSOR_SIZE=24
+export XCURSOR_THEME=Adwaita
 
 # text editor
 export MICRO_TRUECOLOR=1
