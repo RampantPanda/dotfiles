@@ -1,6 +1,6 @@
 # RampantVibe - Cyberpunk 1980s Retrofuturistic Dotfiles
 
-A complete Hyprland configuration with a cyberpunk aesthetic, featuring Blade Runner-inspired theming, neon colors, and a fully functional tiling window manager setup.
+A complete Hyprland configuration with a cyberpunk aesthetic, featuring Blade Runner-inspired theming, neon colors, and a fully functional tiling window manager setup. Mostly built with Cursor AI.
 
 ## 🎨 Theme Overview
 
@@ -337,15 +337,13 @@ stow */
 
 Then reload Hyprland: `SUPER + SHIFT + R`
 
-## 📄 License
-
-See LICENSE file for details.
 
 ## 🙏 Credits
 
 - **Hyprland**: https://hyprland.org/
 - **Waybar**: https://github.com/Alexays/Waybar
 - **Theme Inspiration**: Blade Runner (1982), Cyberpunk 1980s aesthetic
+- **Most of the configuration code**: Cursor AI. Don't know what model.
 
 ---
 
