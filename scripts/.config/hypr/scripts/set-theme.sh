@@ -1,9 +1,12 @@
 #!/bin/bash
+# Set wallpaper and update theme colors
 
-WALLPAPER="$1"
+set -euo pipefail
 
-if [[ ! -f "$WALLPAPER" ]]; then
-    echo "⛔ That's not valid, go fuck yourself."
+WALLPAPER="${1:-}"
+
+if [ -z "$WALLPAPER" ] || [ ! -f "$WALLPAPER" ]; then
+    echo "Error: Invalid wallpaper file: ${WALLPAPER:-<none>}" >&2
     exit 1
 fi
 
@@ -11,7 +14,7 @@ fi
 wal -i "$WALLPAPER" --backend wal --saturate 0.7
 
 # Load pywal color variables into environment
-source ~/.cache/wal/colors.sh
+[ -f ~/.cache/wal/colors.sh ] && source ~/.cache/wal/colors.sh
 
 # 1. Set wallpaper (assuming you use swww)
 swww img "$(realpath "$WALLPAPER")"
@@ -19,14 +22,17 @@ swww img "$(realpath "$WALLPAPER")"
 # 2. Reload Waybar (assumes it uses pywal templates/colors)
 killall -q waybar && waybar &
 
-# 3. Update Foot config (from template)
-envsubst < ~/.config/foot/foot.ini.tpl > ~/.config/foot/foot.ini
+# 3. Update Alacritty config (from template if exists)
+[ -f ~/.config/alacritty/alacritty.toml.tpl ] && \
+    envsubst < ~/.config/alacritty/alacritty.toml.tpl > ~/.config/alacritty/alacritty.toml
 
 # 4. Update Wofi CSS (from template)
-envsubst < ~/.config/wofi/style.css.tpl > ~/.config/wofi/style.css
+[ -f ~/.config/wofi/style.css.tpl ] && \
+    envsubst < ~/.config/wofi/style.css.tpl > ~/.config/wofi/style.css
 
 # 5. Update nwg-drawer color scheme
-cp ~/.cache/wal/colors.css ~/.config/nwg-drawer/colors.css
+[ -f ~/.cache/wal/colors.css ] && \
+    cp ~/.cache/wal/colors.css ~/.config/nwg-drawer/colors.css
 
 # 6. Restart mako to pick up colors
 killall -q mako && mako &

@@ -113,7 +113,7 @@ Log out and log back in, or restart your Hyprland session to apply all changes.
 | `SUPER` (hold) | Application launcher (wofi) |
 | `SUPER + D` | Application drawer (nwg-drawer) |
 | `SUPER + M` | Power menu (nwgbar) |
-| `SUPER + ENTER` | Terminal (foot) |
+| `SUPER + ENTER` | Terminal (alacritty) |
 | `SUPER + E` | File manager (thunar) |
 
 ### Application Shortcuts (Function Keys)
@@ -207,7 +207,7 @@ Enter resize mode with `SUPER + R`, then:
 
 ### Applications
 
-- **Terminal**: Foot with cyberpunk color scheme
+- **Terminal**: Alacritty with cyberpunk color scheme
 - **File Manager**: Thunar with transparency
 - **Text Editor**: Geany with custom cyberpunk color scheme
 - **Launcher**: Wofi with cyberpunk styling
@@ -226,7 +226,7 @@ Enter resize mode with `SUPER + R`, then:
 The color scheme is defined in multiple places:
 - **Waybar**: `waybar/.config/waybar/style.css`
 - **Geany**: `geany/.config/geany/colorschemes/cyberpunk.conf`
-- **Terminal**: `alacritty/.config/alacritty/alacritty.toml` or `foot/.config/foot/foot.ini`
+- **Terminal**: `alacritty/.config/alacritty/alacritty.toml`
 
 ### Changing Wallpapers
 
@@ -247,7 +247,6 @@ Edit `hyprland/.config/hypr/hyprland.conf` and reload with `SUPER + SHIFT + R`.
 .dotfiles/
 ├── alacritty/          # Alacritty terminal config
 ├── cava/              # Audio visualizer
-├── foot/              # Foot terminal config
 ├── geany/             # Geany editor config and theme
 ├── gtk/               # GTK theme settings
 ├── hypridle/          # Idle management

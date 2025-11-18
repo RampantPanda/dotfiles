@@ -13,7 +13,7 @@ export EDITOR=/usr/bin/micro
 #browser
 export BROWSER=firedragon
 #terminal
-export TERM=foot
+export TERM=xterm-256color
 #mail
 export MAIL=thunderbird
 
