@@ -1,148 +1,73 @@
-## FIRST LINE/ROW: Info & Status
-# First param ─┌
-[username]
-format = " [╭─$user]($style)@"
-show_always = true
-style_root = "bold #ff00ff"
-style_user = "bold #00ffff"
+"$schema" = 'https://starship.rs/config-schema.json'
 
-# Second param
-[hostname]
-disabled = false
-format = "[$hostname]($style) in "
-ssh_only = false
-style = "bold #00ff00"
-trim_at = "-"
+## CYBERPUNK 1980s RETROFUTURISTIC THEME
+## Colors: Neon Cyan (#00FFFF), Neon Magenta (#FF00FF), Neon Green (#00FF00)
+## Dark Background (#000000), Accent Red (#FF0040), Accent Yellow (#FFFF00)
 
-# Third param
+format = """
+[░▒▓](#00ffff)\
+[  ](bg:#00ffff fg:#000000)\
+[ ](bg:#00ff00 fg:#00ffff)\
+$directory\
+[ ](fg:#00ff00 bg:#ff00ff)\
+[ ](fg:#ff00ff bg:#00ffff)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[ ](fg:#00ffff bg:#ffff00)\
+$time\
+[ ](fg:#ffff00)\
+\n$character"""
+
 [directory]
-style = "#ff00ff"
-truncate_to_repo = true
-truncation_length = 0
-truncation_symbol = "repo: "
+style = "fg:#000000 bg:#00ff00 bold"
+format = "[ $path ]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
 
-# Fourth param
-[sudo]
-disabled = false
-
-# Before all the version info (python, nodejs, php, etc.)
-[git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
-deleted = "x"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "#00ffff"
-
-# Last param in the first line/row
-[cmd_duration]
-disabled = false
-format = "took [$duration]($style)"
-min_time = 1
-style = "#ffff00"
-
-## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
-[battery]
-charging_symbol = ""
-disabled = true
-discharging_symbol = ""
-full_symbol = ""
-
-[[battery.display]] # "bold red" style when capacity is between 0% and 15%
-disabled = false
-style = "bold #ff0040"
-threshold = 15
-
-[[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
-disabled = true
-style = "bold yellow"
-threshold = 50
-
-[[battery.display]] # "bold green" style when capacity is between 50% and 80%
-disabled = true
-style = "bold green"
-threshold = 80
-
-# Prompt: optional param 1
-[time]
-disabled = true
-format = " 🕙 $time($style)\n"
-style = "bright-white"
-time_format = "%T"
-
-# Prompt: param 2
-[character]
-error_symbol = " [×](bold #ff0040)"
-success_symbol = " [╰─λ](bold #00ffff)"
-
-# SYMBOLS
-[status]
-disabled = false
-format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
-map_symbol = true
-pipestatus = true
-symbol = "■"
-style = "bold #ff0040"
-
-[aws]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+[directory.substitutions]
+"Documents" = "/home/pekka/Documents/"
+"Downloads" = "/home/pekka/Downloads/"
+"Music" = "/home/pekka/Oxbacka/Music/"
+"Dots" = "/home/pekka/.dotfiles"
 
 [git_branch]
-symbol = " "
+symbol = ""
+style = "bg:#ff00ff"
+format = '[[ $symbol $branch ](fg:#000000 bg:#ff00ff bold)]($style)'
 
-[golang]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
+[git_status]
+style = "bg:#ff00ff"
+format = '[[($all_status$ahead_behind )](fg:#000000 bg:#ff00ff bold)]($style)'
 
 [nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
+symbol = ""
+style = "bg:#00ffff"
+format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
 
 [rust]
-symbol = " "
+symbol = ""
+style = "bg:#00ffff"
+format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
 
-[swift]
-symbol = "ﯣ "
+[golang]
+symbol = ""
+style = "bg:#00ffff"
+format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#00ffff"
+format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#ffff00"
+format = '[[  $time ](fg:#000000 bg:#ffff00 bold)]($style)'
+
+[character]
+success_symbol = "[>](fg:#00ffff bold)"
+error_symbol = "[×](fg:#ff0040 bold)"
+vicmd_symbol = "[V](fg:#ff00ff bold)"
