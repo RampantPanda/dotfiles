@@ -1,73 +1,106 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+## ALIEN/ALIENS MOVIE COMPUTER TERMINAL STYLE
+## Minimal, monochrome, industrial aesthetic
 
-## CYBERPUNK 1980s RETROFUTURISTIC THEME
-## Colors: Neon Cyan (#00FFFF), Neon Magenta (#FF00FF), Neon Green (#00FF00)
-## Dark Background (#000000), Accent Red (#FF0040), Accent Yellow (#FFFF00)
+format = "$username@$hostname:\\[$directory\\] $character"
 
-format = """
-[░▒▓](#00ffff)\
-[  ](bg:#00ffff fg:#000000)\
-[ ](bg:#00ff00 fg:#00ffff)\
-$directory\
-[ ](fg:#00ff00 bg:#ff00ff)\
-[ ](fg:#ff00ff bg:#00ffff)\
-$nodejs\
-$rust\
-$golang\
-$php\
-[ ](fg:#00ffff bg:#ffff00)\
-$time\
-[ ](fg:#ffff00)\
-\n$character"""
+# Disable blank line
+add_newline = false
 
+[line_break]
+disabled = true
+
+# Username - minimal, uppercase
+[username]
+format = "[$user]($style)"
+style_user = "fg:#00ff00"
+style_root = "fg:#00ff00"
+show_always = true
+
+# Hostname - minimal
+[hostname]
+format = "[$hostname]($style)"
+style = "fg:#00ff00"
+ssh_only = false
+trim_at = "-"
+
+# Directory - minimal path
 [directory]
-style = "fg:#000000 bg:#00ff00 bold"
-format = "[ $path ]($style)"
-truncation_length = 5
-truncation_symbol = "…/"
+format = "[$path]($style)"
+style = "fg:#00ff00"
+truncate_to_repo = true
+truncation_length = 2
+truncation_symbol = ".."
 
-[directory.substitutions]
-"Documents" = "/home/pekka/Documents/"
-"Downloads" = "/home/pekka/Downloads/"
-"Music" = "/home/pekka/Oxbacka/Music/"
-"Dots" = "/home/pekka/.dotfiles"
-
+# Git branch - minimal
 [git_branch]
+format = "[$symbol$branch]($style)"
 symbol = ""
-style = "bg:#ff00ff"
-format = '[[ $symbol $branch ](fg:#000000 bg:#ff00ff bold)]($style)'
+style = "fg:#00ff00"
 
+# Git status - minimal indicators
 [git_status]
-style = "bg:#ff00ff"
-format = '[[($all_status$ahead_behind )](fg:#000000 bg:#ff00ff bold)]($style)'
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:#00ff00"
+conflicted = "="
+ahead = "^${count}"
+behind = "v${count}"
+diverged = "<>^${ahead_count}v${behind_count}"
+up_to_date = ""
+untracked = "?"
+stashed = "S"
+modified = "M"
+staged = "+"
+renamed = "R"
+deleted = "D"
 
+# Character prompt - simple
+[character]
+success_symbol = "[>](fg:#00ff00)"
+error_symbol = "[!](fg:#ff0040)"
+vicmd_symbol = "[V](fg:#00ff00)"
+
+# Disable most modules for minimal look
 [nodejs]
-symbol = ""
-style = "bg:#00ffff"
-format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+disabled = true
 
 [rust]
-symbol = ""
-style = "bg:#00ffff"
-format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+disabled = true
 
 [golang]
-symbol = ""
-style = "bg:#00ffff"
-format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+disabled = true
 
 [php]
-symbol = ""
-style = "bg:#00ffff"
-format = '[[ $symbol ($version) ](fg:#000000 bg:#00ffff bold)]($style)'
+disabled = true
+
+[python]
+disabled = true
+
+[java]
+disabled = true
+
+[package]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[aws]
+disabled = true
+
+[conda]
+disabled = true
 
 [time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#ffff00"
-format = '[[  $time ](fg:#000000 bg:#ffff00 bold)]($style)'
+disabled = true
 
-[character]
-success_symbol = "[>](fg:#00ffff bold)"
-error_symbol = "[×](fg:#ff0040 bold)"
-vicmd_symbol = "[V](fg:#ff00ff bold)"
+[battery]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[status]
+disabled = true
+
+[cmd_duration]
+disabled = true
