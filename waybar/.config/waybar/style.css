@@ -174,11 +174,11 @@ window#waybar {
 
 #disk {
     border-style: solid;
-    border-color: #0080ff;
+    border-color: #00ffff;
     border-width: 2px;
     padding: 3px;
     background: rgba(0, 128, 255, 0.1);
-    color: #0080ff;
+    color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
 }
 
@@ -197,8 +197,8 @@ window#waybar {
 }
 
 #battery {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
@@ -231,15 +231,15 @@ window#waybar {
 }
 
 #cpu {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
 
 #memory {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
@@ -252,8 +252,8 @@ window#waybar {
 }
 
 #network {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
@@ -266,8 +266,8 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
@@ -280,8 +280,8 @@ window#waybar {
 }
 
 #temperature {
-    color: #0080ff;
-    border-color: #0080ff;
+    color: #00ffff;
+    border-color: #00ffff;
     box-shadow: 0 0 5px #0080ff;
     background: rgba(0, 128, 255, 0.1);
 }
